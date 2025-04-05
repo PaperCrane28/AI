@@ -18,6 +18,7 @@ sns.set_theme('talk')
 ## Define paths for images and annotations
 ```python
 images_path = r"/kaggle/input/face-mask-detection/images/"
+
 annotations_path = r"/kaggle/input/face-mask-detection/annotations/"
 
 image_names = os.listdir(images_path)
