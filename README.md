@@ -40,6 +40,13 @@ images_data['path'].iloc[0]
 images_data['id'] = images_data['path'].apply(lambda x: int(x.split('/')[-1].split('.')[0].removeprefix('maksssksksss')))
 ```
 
-## 
+## DataFrame creation
+```Jupyter Notebook
+images_data = images_data[['id', 'path']]
+
+images_data.head()
+
+images_data.info()
+```
 ## Reference
 https://www.kaggle.com/code/abdelrhmankaram/face-mask-detection-using-yolov8/notebook
