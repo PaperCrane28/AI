@@ -20,23 +20,29 @@ sns.set_theme('talk')
 images_path = r"/kaggle/input/face-mask-detection/images/"
 
 annotations_path = r"/kaggle/input/face-mask-detection/annotations/"
-
+```
+```
 image_names = os.listdir(images_path)
 
 image_names[:5]
-
+```
+```
 annotation_names = os.listdir(annotations_path)
 
 annotation_names[:5]
-
+```
+```
 len(annotation_names) == len(image_names)
-
+```
+```
 images_data = pd.DataFrame(pd.Series([images_path + i for i in image_names], name='path'))
 
 images_data.head()
-
+```
+```
 images_data['path'].iloc[0]
-
+```
+```
 images_data['id'] = images_data['path'].apply(lambda x: int(x.split('/')[-1].split('.')[0].removeprefix('maksssksksss')))
 ```
 
