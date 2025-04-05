@@ -103,5 +103,67 @@ annotations_data = pd.DataFrame(annotations_data)
 ```Jupyter Notebook
 annotations_data
 ```
+```
+images_data.head()
+```
+```
+data = pd.merge(images_data, annotations_data, left_on='id', right_on='file_id', how='inner')
+
+data
+```
+```
+data.info()
+```
+```
+data.drop(columns=['depth', 'segmented', 'pose', 'truncated', 'difficult'], inplace=True)
+```
+```
+data
+```
+```
+plt.figure(figsize=(8, 6))
+sns.countplot(data, x='class')
+plt.show()
+```
+```
+def display_image(image_id):
+    data_to_plot = data[data['id'] == image_id]
+
+    fig, ax = plt.subplots()
+    plt.grid(False); plt.axis(False)
+    plt.imshow(plt.imread(data_to_plot['path'].iloc[0]))
+
+    for _, row in data_to_plot.iterrows():
+        x, y, width, height, color = row['xmin'], row['ymin'], row['xmax']-row['xmin'], row['ymax'] - row['ymin'], 'r' if row['class'] == 'without_mask' else 'g' if row['class'] == 'with_mask' else 'b'
+        rect = patches.Rectangle((x, y), width, height,
+                                linewidth=2, edgecolor=color, facecolor='none')
+        ax.add_patch(rect)
+
+    colors = {
+        'without_mask': 'r',
+        'with_mask': 'g',
+        'mask_weared_incorrectly': 'b'
+    }
+
+    legend_patches = [patches.Patch(color=color, label=label) for label, color in colors.items()]
+    ax.legend(handles=legend_patches, loc='lower right', fontsize='xx-small')
+
+    plt.show()
+```
+```
+display_image(52)
+```
+```
+max_width = data['width'].max()
+max_height = data['height'].max()
+
+max_width, max_height
+```
+```
+data.head()
+```
+```
+display_image(2)
+```
 ## Reference
 https://www.kaggle.com/code/abdelrhmankaram/face-mask-detection-using-yolov8/notebook
