@@ -45,7 +45,8 @@ images_data['id'] = images_data['path'].apply(lambda x: int(x.split('/')[-1].spl
 images_data = images_data[['id', 'path']]
 
 images_data.head()
-
+```
+```
 images_data.info()
 ```
 
