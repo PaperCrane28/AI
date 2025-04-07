@@ -4,11 +4,11 @@
 
 ### Team Member
 BAI Tong
-DENG Tong
-HUANG Xinghua
-LI Chenhao
-TANG Bowen
-WANG Jiawei
+       DENG Tong
+       HUANG Xinghua
+       LI Chenhao
+       TANG Bowen
+     WANG Jiawei
 ## Importing Libraries
 
 ```Jupyter Notebook
