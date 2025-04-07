@@ -2,6 +2,8 @@
 
 ![image](https://github.com/user-attachments/assets/2066b3a2-d88d-4aa3-856e-d04ef714fbf6)
 
+### Team Member
+
 ## Importing Libraries
 
 ```Jupyter Notebook
